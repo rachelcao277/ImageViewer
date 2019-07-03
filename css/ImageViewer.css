@@ -1,0 +1,36 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: #8c919c;
+}
+.imageViewerContainer{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.scaleBox{
+    position: absolute;
+    left:0;
+    bottom: 0;
+    padding: 6px;
+    background: #293245;
+    border: 1px solid #3c5167;
+    z-index: 999;
+}
+.scaleCanvas{
+    position: relative;
+    width: 200px;
+    overflow: hidden;
+    z-index: 999;
+    cursor: pointer;
+}
+.scalePanel{
+    width: 100%;
+    height: 24px;
+    line-height: 24px;
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+}
