@@ -27,17 +27,19 @@ HTML示例如下(~~位置和风格可以按自己需求来~~)
     <script src="js/ImageViewer.js"></script>
 
     <script>
-        const containerWidth = document.querySelector('.container').clientWidth;
-        const containerHeight = document.querySelector('.container').clientHeight;
-        const MyImageViewer = new ImageViewer({
-            canvas: document.querySelector('#imageViewer'),
-            width: containerWidth,
-            height: containerHeight,
-            scaleCanvas: document.querySelector('.scaleCanvas'),
-            scalePanel: document.querySelector('.scalePanel')
-        });
+        window.onload = function() {
+            const containerWidth = document.querySelector('.imageViewerContainer').clientWidth;
+            const containerHeight = document.querySelector('.imageViewerContainer').clientHeight;
+            const MyImageViewer = new ImageViewer({
+                canvas: document.querySelector('#imageViewer'),
+                width: containerWidth,
+                height: containerHeight,
+                scaleCanvas: document.querySelector('.scaleCanvas'),
+                scalePanel: document.querySelector('.scalePanel')
+            });
 
-        MyImageViewer.SetImage('./images/view1.jpg');
+            MyImageViewer.SetImage('./images/view1.jpg');
+        };
     </script>
 </body>
 </html>
