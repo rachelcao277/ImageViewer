@@ -3,6 +3,8 @@
 # 使用说明
 Tip：采用原生ES6写法，在项目用运行可能需要[babel](https://www.babeljs.cn/)进行转换
 
+Demo地址：https://rachelcao277.github.io/ImageViewer
+
 HTML示例如下(~~位置和风格可以按自己需求来~~)
 
 ```
