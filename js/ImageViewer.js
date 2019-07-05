@@ -83,6 +83,14 @@ class ImageViewer {
         this.image.addEventListener('load', () => {
             this.iWidth = this.image.width;
             this.iHeight = this.image.height;
+
+            //获取原有节点
+            let beforeCanvas = this.scaleCanvas.querySelectorAll('canvas');
+            //删除原有节点
+            if (beforeCanvas.length > 0) {
+                this.scaleCanvas.removeChild(beforeCanvas[0]);
+            }
+
             // 创建缩略图面板
             this.sCanvas = document.createElement("canvas");
             this.sCtx = this.sCanvas.getContext("2d");
