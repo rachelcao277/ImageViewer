@@ -16,6 +16,7 @@ HTML示例如下(~~位置和风格可以按自己需求来~~)
     <link rel="stylesheet" href="css/ImageViewer.css">
 </head>
 <body>
+    <input type="file" name="image" accept="image/*" class="uploadImage">
     <div class="imageViewerContainer">
         <canvas id="imageViewer"></canvas>
         <div class="scaleBox">
@@ -38,7 +39,19 @@ HTML示例如下(~~位置和风格可以按自己需求来~~)
                 scalePanel: document.querySelector('.scalePanel')
             });
 
-            MyImageViewer.SetImage('./images/view1.jpg');
+            MyImageViewer.SetImage('./images/view2.jpg');
+
+            document.querySelector('.uploadImage').addEventListener('change', event => {
+                let image = event.target.files[0];
+                if (image) {
+                    let reader = new FileReader();
+                    reader.readAsDataURL(image);
+                    reader.onload = function() {
+                        let imgUrl = this.result;
+                        MyImageViewer.SetImage(imgUrl);
+                    }
+                }
+            });
         };
     </script>
 </body>
