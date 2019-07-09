@@ -14,7 +14,7 @@ html, body{
     position: absolute;
     left:0;
     bottom: 0;
-    padding: 6px;
+    padding: 6px 6px 0;
     background: #293245;
     border: 1px solid #3c5167;
     z-index: 999;
