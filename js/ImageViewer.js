@@ -190,6 +190,7 @@ class ImageViewer {
         this.handleDrag = this.HandleDrag.bind(this);
         this.handleMouseUp = this.HandleMouseUp.bind(this);
         this.canvas.addEventListener('mousemove', this.handleDrag);
+        this.canvas.addEventListener('mouseleave', this.handleMouseUp);
         this.canvas.addEventListener('mouseup', this.handleMouseUp);
         this.UpdateCanvas();
     }
@@ -213,6 +214,7 @@ class ImageViewer {
      */
     HandleMouseUp() {
         this.canvas.removeEventListener('mousemove', this.handleDrag);
+        this.canvas.removeEventListener('mouseleave', this.handleMouseUp);
         this.canvas.removeEventListener('mouseup', this.handleMouseUp);
     };
 
