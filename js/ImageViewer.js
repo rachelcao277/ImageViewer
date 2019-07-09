@@ -79,6 +79,12 @@ class ImageViewer {
         this.image = new Image();
         this.image.crossOrigin = "anonymous";
         this.image.src = src;
+        // 加载图片时创建加载动画
+        let parentNode = this.canvas.parentElement;
+        let loaderBox = document.createElement('div');
+        loaderBox.className = "loaderBox";
+        loaderBox.innerHTML = '<div class="box"><div class="loader"></div></div>';
+        parentNode.appendChild(loaderBox);
         // 监听图片加载
         this.image.addEventListener('load', () => {
             this.iWidth = this.image.width;
@@ -90,6 +96,9 @@ class ImageViewer {
             if (beforeCanvas.length > 0) {
                 this.scaleCanvas.removeChild(beforeCanvas[0]);
             }
+            
+            // 删除加载动画(减少资源损耗，减少css动画在后台运行次数)
+            parentNode.removeChild(loaderBox);
 
             // 创建缩略图面板
             this.sCanvas = document.createElement("canvas");
