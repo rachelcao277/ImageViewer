@@ -149,13 +149,14 @@ class ImageViewer {
         let left = -this.x * this.sWidth / (this.iWidth * this.scale);
         let top = -this.y * this.sWidth / (this.iWidth * this.scale);
         // 将方框宽度固定在缩略图面板中
-        if (width >= this.sWidth) {
-            width = this.sWidth;
-            left = 0;
-        }
-        else if (width + left >= this.sWidth) {
+
+        if (width + left >= this.sWidth) {
             width = this.sWidth - left;
             left = this.sWidth - width;
+            if (width >= this.sWidth) {
+                width = this.sWidth;
+                left = 0;
+            }
         }
         else if (left <= 0) {
             width += left;
@@ -163,13 +164,13 @@ class ImageViewer {
         }
 
         // 将方框高度固定在缩略图面板中
-        if (height >= this.sHeight) {
-            height = this.sHeight;
-            top = 0;
-        }
-        else if (height + top >= this.sHeight) {
+        if (height + top >= this.sHeight) {
             height = this.sHeight - top;
             top = this.sHeight - height;
+            if (height >= this.sHeight) {
+                height = this.sHeight;
+                top = 0;
+            }
         }
         else if (top <= 0){
             height += top;
