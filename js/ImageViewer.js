@@ -35,7 +35,7 @@ class ImageViewer {
         // 图片拖拽至边缘的最小限制
         this.appearSize = options.appearSize ? options.appearSize : 180;
         // 缩放步进
-        this.scaleStep = options.scaleStep ? options.scaleStep : 0.1;
+        this.scaleStep = options.scaleStep ? options.scaleStep : 0.02;
         // 最小缩放比例
         this.minScale = options.minScale ? options.minScale : 0.2;
         // 最大缩放比例

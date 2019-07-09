@@ -68,7 +68,7 @@ height | 图片查看器容器高度 | Number | 必须
 scaleCanvas | 缩略图容器节点 | Element | 必须
 scalePanel | 缩放比例数值面板 | Element | 必须
 appearSize | 图片拖拽至边缘的最小限制 | Number | 180
-scaleStep | 缩放步进 | Number | 0.1
+scaleStep | 缩放步进 | Number | 0.02
 minScale | 最小缩放比例 | Number | 0.2
 maxScale | 最大缩放比例 | Number | 8
 
